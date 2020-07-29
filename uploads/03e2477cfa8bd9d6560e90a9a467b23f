@@ -1,0 +1,187 @@
+
+/**
+ * WEB222 – Assignment 02
+ *
+ * I declare that this assignment is my own work in accordance with
+ * Seneca Academic Policy. No part of this assignment has been
+ * copied manually or electronically from any other source
+ * (including web sites) or distributed to other students.
+ *
+ * Please update the following with your information:
+ *
+ *      Name: <YOUR_NAME>
+ *      Student ID: <YOUR_STUDENT_ID>
+ *      Date: <SUBMISSION_DATE>
+ *
+ */
+
+/**
+ * The utils Object has methods for working with individual user data, in
+ * order to format or generate new user information.
+ */
+var utils = {
+    /**
+     * Takes a phone number in the form "##########" and returns it in the
+     * form "(###) ###-####".
+     *
+     * 
+     */
+    formatPhoneNumber: function(phoneNumber) {
+        var cleaned=(''+phoneNumber).replace(/\D/g, '')
+        var match=cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+        if(match){
+            return '('+match[1]+')'+' '+match[2]+'-'+match[3]
+        }
+        return null
+    },
+    /**
+     * Uses the given firstName and lastName strings to create a username, which
+     * takes the form: first two letters of first name followed by at most 4 letters
+     * of the last name.  For example:
+     *
+     * "John Smithson" -> "josmit"
+     * "Dan Min" -> "damin"
+     *
+     * 
+     * 
+     * The generated username should be in UPPERCASE.
+     *
+     *  
+     */
+    generateUsername: function(firstName, lastName) {
+        var firstPart=firstName.substr(0,2);
+        var secondPart=lastName.substr(0,4);
+        var merge=firstPart.concat(secondPart);
+        var finalString=merge.toUpperCase();
+        return finalString;
+    } 
+};
+
+/**
+ * The users Object has various methods for processing a list of users (userList).
+ * The userList takes the following form:
+ *
+ * [ user, user, ... ]
+ *
+ *  Where each user is an Object with the following form:
+ *
+ * {
+ *   id: 1,                              // Number, the user's id
+ *   firstName: "Paige",                 // String, the user's first name
+ *   lastName: "Bools",                  // String, the user's last name
+ *   birthDate: "1995-02-04T07:34:45Z",  // String, a UTC formatted Date string
+ *   phone: "8989068955",                // String, phone number with spaces/dashes
+ *   email: "pbools0@webmd.com",         // String, user's email
+ *   creditScore: 776,                   // Number, a credit score between 200 and 800
+ *   address: "476 Veith Parkway",       // String, user's street address
+ *   city: "Cuamba",                     // String, user's city
+ *   country: "Mozambique",              // String, user's country
+ *   isStudent: false                    // Boolean, whether use is a student
+ * }
+ *
+ * See us
+ * 
+ er-data.json for sample data.  This data was generated with https://mockaroo.com/.
+ */
+
+var users = {
+    /**
+     * Return the number of users in userList (array), or 0 if userList is null/
+     * undefined.
+     *
+     * 
+     */
+    getUserCount: function(userList) {
+        var count=0;
+        for(i=0;i<userList.length;i++){
+            count++;
+        }
+        return count;
+    },
+
+    /**
+     * Return the list (array) of all users in userList who are students
+     * (i.e., isStudent === true).
+     *
+     * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+     * 
+     * 
+     */
+    getStudents: function(userList) {
+        var final=userList.filter(userList.isSudent==true);
+        return final;
+    },
+
+    /**
+     * Return a list (array) of all users with a credit score equal to or
+     * greater than minScore.
+     *
+     * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+     *
+     * 
+     * 
+     */
+    getUsersWithGoodCredit: function(userList, minScore) {
+        var result=userList.filter(userList.creditScore>=minScore);
+        return result;
+    },
+
+    /**
+     * Creates a username from the firstName and lastName properties for each
+     * user in userList.  Use the util.generateUsername() function you wrote above.
+     * Return the updated list of users.
+     *
+     * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+     * 
+     * 
+     */
+    setUsernames: function(userList) {
+        var newUserList;
+        userList.username=userList.forEach(generateUsername(userList.firstName,userList.lastName));
+        for(var i=0;i<userList.length;i++){
+            newUserList[i]=userList[i]+{userName: username[i]};
+        }
+        return newUserList;
+    },
+
+    /**
+     * Returns an Array of Names and formatted phone numbers, using the
+     * util.formatPhoneNumber() function you wrote above.  The array
+     * you return should take the following form:
+     *
+     * [ {name: 'First Last', phone: '(555) 555-5555'}, ...]
+     *
+     * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+     * 
+     * 
+     */
+    getPhoneList: function(userList) {
+        var formatpn=userList.map(formatPhoneNumber(userList.phone));
+        var name,finalList;
+        for(var i=0;i<userList.length;i++){
+            name[i]=userList[i].firstName+" "+userList[i].lastName;
+        }
+        for(var j=0;j<userList.length;j++){
+            finalList={name: name[j], phone: formatpn[j]};
+        }
+        return finalList;
+    },
+
+    /**
+     * Sorts the Array of users (userList) according to their birth dates,
+     * youngest to oldest.
+     *
+     * 
+     */
+    sortByDateOfBirth: function(userList) {
+        for(var k=0;k<userList.length;k++){
+            const sortedUserList=userList.sort((userList[k],userList[k+1]),userList[k].birthDate);
+        }
+        
+    }
+};
+console.log(utils.formatPhoneNumber(9998823729));
+console.log(utils.generateUsername("Saumya","Vasa"));
+var json;
+json=require('C:\Users\saumy\Desktop\assignment 2\ user-data.json');
+users.getUserCount(json);

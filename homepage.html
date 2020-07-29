@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WEB222</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+  <script src="js/a4-country-data.js"></script>
+  <script src="js/myscript.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    thead {background-color:lightblue;}
+	  tbody {background-color:lightyellow;}
+	  tfoot {background-color:lightgreen;}
+    table {border: 2px outset darkblue; border-collapse: collapse;}
+    th, td {border: 2px inset darkgreen;}
+    #navbar {
+  overflow: hidden;
+  z-index: 1;
+}
+    .img-container {
+        margin-left: 585px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+      }
+      .main {
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .main {
+  padding-top: 60px;
+}
+x-sign{
+  color: red;
+  --color1: yellow;
+  --color2: gold;
+  --color3: orange;
+  --color4: darkred;
+  font-family: Sriracha;
+  --interval: 1s;
+  display: block;
+  text-shadow: 
+    0 0 10px var(--color1),
+    0 0 20px var(--color2),
+    0 0 40px var(--color3),
+    0 0 80px var(--color4);
+  will-change: filter, color;
+  filter: saturate(60%);
+  animation: flicker steps(100) var(--interval) 1s infinite;
+  font-size: 50px;
+  margin-left: 60px;
+}
+
+@keyframes flicker {
+  50% {
+    color: rgb(238, 158, 158);
+    filter: saturate(200%) hue-rotate(20deg);
+  }
+}
+</style>
+<script>
+const signs = document.querySelectorAll('x-sign')
+const randomIn = (min, max) => (
+  Math.floor(Math.random() * (max - min + 1) + min)
+)
+
+const mixupInterval = el => {
+  const ms = randomIn(2000, 4000)
+  el.style.setProperty('--interval', `${ms}ms`)
+}
+
+signs.forEach(el => {
+  mixupInterval(el)
+  el.addEventListener('webkitAnimationIteration', () => {
+    mixupInterval(el)
+  })
+})
+</script>
+</head>
+<body>
+  <nav class="navbar-inverse" style="background-color: none;">
+      <div class="navbar-header">
+        <a class="navbar-email" href="mailto:modern.custcare@gmail.com">Email : modern.custcare@gmail.com</a>
+      </div>
+      <div class="img-container">
+        <img class="logo" src="C:\Users\saumy\Desktop\finalLogo.jpg" alt="logo" width="180">
+        </div>
+      <div class="col-sm-3 col-md-3 col-lg-2 pull-right" style="margin-top: -170px;"><ul class="social-icons">
+        <li><a href="https://www.facebook.com/modernsurveillance.mu/
+        " target="_blank" class="social-icon" style="color: #3b5999;"> <i class="fa fa-3x fa-facebook-square"></i></a></li>
+        <li><a href="https://www.instagram.com/modern.construction/?hl=en
+        " target="_blank" class="social-icon" style="color: #e4405f;"> <i class="fa fa-3x fa-instagram"></i></a></li>
+        <li><a href="https://plus.google.com/111994138147632516185
+        " target="_blank"class="social-icon" style="color: #0077b5;" > <i class="fa fa-3x fa-linkedin-square"></i></a></li>
+        </ul></div>
+    </div>
+  </nav>
+    <nav class="topnav" id="navbar">
+      <ul>	
+        <li><a href="homepage.html" id="menu_1">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Our Services</a>
+          <ul>
+            <div class="services">
+            <li id="menu_31"><a href="modernSur.html"> Modern Surveillance</a></li>
+            <li id="menu_32"><a href="modernConst.html"> Modern Construction</a></li>
+            <li id="menu_32"><a href="modernGraphics.html"> Modern Graphics&ensp;&ensp;&emsp;</a></li>
+          </div>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a>
+        </li>
+        <li><a href="career.html">Careers</a>
+        </li>
+        <div class="search-container">
+          <form>
+          <input type="text" placeholder="Search..." onkeyup="myFunction()" name="search">
+          <button type="submit"> <i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </ul>
+    </nav>
+  <div class=main>
+  <div class="homevideo-container">
+  <figure>
+  <video class="homeVideo" autoplay muted loop >
+    <source src="C:\Users\saumy\Desktop\rishab\css\edited_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</figure>
+</video></div>
+    <nav></nav>
+      <div class="background" id="scroll">
+        <h1 style="margin-left: 380px;">
+          <svg width="60%" height="112" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+             <linearGradient id="gradient" y1="0" y2="1">
+              <stop stop-color="#e7717d" offset="0"/>
+              <stop stop-color="#f2e394" offset="1"/>
+             </linearGradient>
+            </defs>
+            <g>
+             <text class="textHome" id="text" y="98" font-family: NHaasGroteskDSPro,sans-serif; font-size="70px" font-weight="900" stroke-width="2" stroke="url(#gradient)" fill="white">Modern Group</text>
+            </g>
+           </svg></h1>
+      <div class="Promotions" style="margin-left: 950px;">
+        <x-sign>
+          Promotion
+        </x-sign>
+        <img src="C:\Users\saumy\Desktop\rishab\css\flyer.jpg" alt="Promotion" height="400px" width="340">
+      </div>
+      <div class="Written" style="margin-top: -450px; margin-left: 100px;" >
+      <p style="color:black; font-size: 20px; width: 820px; font-family: 'Roboto Slab', serif;">
+        Modern is categorised into 3 sub-categories: <span ><a style="color: #7e685a;" href="modernSur.html"><b>Modern Surveillance</b></a></span>, <span ><a style="color: #7e685a;" href="modernConst.html"><b>Modern Construction</b></a></span> and <span ><a style="color: #7e685a;" href="modernGraphics.html"><b>Modern Graphics</b></a></span>. Each one with their own unique offerings and with the expertise required to offer you with a positive experience.<br>
+        We pride ourselves with the modern quality that we provide, focusing on every detail possible to assure that you are fully satisfied.<br> <br><i>By choosing Modern, you can rest assured that you will be backed up by a dedicated and committed team that will put you first!</i>
+        </p><br><br><br>
+      </div>
+      <div class="logos">
+        <img src="C:\Users\saumy\Desktop\modernSurv.jpg" alt="Modern Surveillance" style="margin-left: 230px; padding-top: 400 px; margin-bottom: 60px;"height="100" width="500" usemap="#workmap">
+        <map name="workmap">
+          <area shape="rect" coords="10,5,100,250" alt="Modern Surveillance" href="modernSur.html">
+          <area shape="rect" coords="160,5,320,250" alt="Modern Construction" href="modernConst.html">
+          <area shape="rect" coords="350,5,490,250" alt="Coffee" href="modernGraphics.html">
+        </map>
+        </div>
+        <!--<video class="videoHome" width="320" height="400" autoplay muted loop>
+          <source src="C:\Users\saumy\Desktop\homepageVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>-->
+        <footer>
+          <p class="center">&copy; 2020 Modern Innovations</p> 
+      </footer>
+  
+  <script>
+      window.onscroll = function() {myFunction()};
+      
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+  </script>
+</html>
+<script>
+  function search() {
+   
+     var name = document.getElementById("searchForm").elements["searchItem"].value;
+     var pattern = name.toLowerCase();
+     var targetId = "";
+   
+     var divs = document.getElementsByClassName("col-md-2");
+     for (var i = 0; i < divs.length; i++) {
+        var para = divs[i].getElementsByTagName("p");
+        var index = para[0].innerText.toLowerCase().indexOf(pattern);
+        if (index != -1) {
+           targetId = divs[i].parentNode.id;
+           document.getElementById(targetId).scrollIntoView();
+           break;
+        }
+     }  
+  }
+  </script>
