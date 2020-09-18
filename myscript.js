@@ -14,8 +14,8 @@ app.use(bodyParser.json())
 app2.use(bodyParser.urlencoded({ extended: false })); 
 app2.use(bodyParser.json())
 
-app.set('port', 3000);
-app2.set('port',8080);
+app.set('port', process.env.PORT || 3000);
+app2.set('port',process.env.PORT || 8080);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
