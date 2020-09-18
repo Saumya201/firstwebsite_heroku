@@ -1,1 +1,93 @@
-<h1>Main Office</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WEB222</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fondamento&display=swap" rel="stylesheet">
+  <script src="js/a4-country-data.js"></script>
+  <script src="js/myscript.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    thead {background-color:lightblue;}
+	  tbody {background-color:lightyellow;}
+	  tfoot {background-color:lightgreen;}
+    table {border: 2px outset darkblue; border-collapse: collapse;}
+    th, td {border: 2px inset darkgreen;}
+    #navbar {
+  overflow: hidden;
+  z-index: 1;
+}
+    .img-container {
+        margin-left: 585px;
+        padding-top: 10px;
+        margin-bottom: 0px;
+      }
+      .main {
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .main {
+  padding-top: 60px;
+}
+   </style>
+</head>
+<body>
+    <nav class="topnav" id="navbar">
+      <ul>	
+        <li><a href="homepage.html" id="menu_1">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Our Services</a>
+          <ul>
+            <div class="services">
+            <li id="menu_31"><a href="modernSur.html"> Modern Surveillance</a></li>
+            <li id="menu_32"><a href="modernConst.html"> Modern Construction</a></li>
+            <li id="menu_32"><a href="modernGraphics.html"> Modern Graphics&ensp;&ensp;&emsp;</a></li>
+          </div>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact Us</a>
+        </li>
+        <li><a href="career.html">Careers</a>
+        </li>
+        <div class="search-container">
+          <form action="/action_page.php">
+          <input type="text" placeholder="Search..." name="search">
+          <button type="submit"> <i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </ul>
+    </nav>
+    <div class="main">
+         <div class="coverimage">
+             <img src="C:\Users\saumy\Desktop\rishab\css\office_cover.jpeg" height="400px" width="1367px"> 
+         </div>
+    </div>
+    <footer>
+        <p class="center">&copy; 2020 Modern Innovations</p> 
+    </footer>
+    <script>
+      window.onscroll = function() {myFunction()};
+      
+      var navbar = document.getElementById("navbar");
+      var sticky = navbar.offsetTop;
+      
+      function myFunction() {
+        if (window.pageYOffset >= sticky) {
+          navbar.classList.add("sticky")
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    </script>
