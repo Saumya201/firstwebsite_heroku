@@ -4,8 +4,7 @@
   "description": "",
   "main": "myscript.js",
   "scripts": {
-    "start": "node myscript.js",
-    "build": "tsc -p ./src"
+    "start": "node myscript.js"
   },
   "repository": {
     "type": "git",
